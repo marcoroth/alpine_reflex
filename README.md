@@ -1,24 +1,22 @@
-# README
+# AlpineReflex
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a MVCE for issue [hopsoft/stimulus_reflex#329](https://github.com/hopsoft/stimulus_reflex/issues/329).
 
-Things you may want to cover:
 
-* Ruby version
+These are the commands to recreate this app:
 
-* System dependencies
+```
+rails new alpine_reflex --webpacker
+cd alpine_reflex
 
-* Configuration
+bundle exec rails webpacker:install:stimulus
+bundle exec rails g controller home index
 
-* Database creation
+bundle add stimulus_reflex
+bundle exec rails stimulus_reflex:install
+rails dev:cache
 
-* Database initialization
+rails g stimulus_reflex example hello
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+yarn add alpinejs
+```
