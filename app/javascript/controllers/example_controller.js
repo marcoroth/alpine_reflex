@@ -54,6 +54,7 @@ export default class extends ApplicationController {
 
   helloSuccess(element, reflex, noop, reflexId) {
     console.log("hello success", element, reflex, reflexId)
+    Alpine.discoverUninitializedComponents(function(el){ Alpine.initializeComponent(el) })
   }
 
   helloError(element, reflex, error, reflexId) {
@@ -66,5 +67,6 @@ export default class extends ApplicationController {
 
   afterHello(element, reflex, noop, reflexId) {
     console.log("after hello", element, reflex, reflexId)
+    Alpine.discoverUninitializedComponents(function(el){ Alpine.initializeComponent(el) })
   }
 }
