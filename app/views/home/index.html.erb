@@ -1,0 +1,26 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<div data-controller="example">
+  <button data-reflex="click->Example#hello" data-reflex-root="#alpine">Refresh</button><br/><br/>
+
+  <div id="alpine">
+    <%= Time.now %><br/><br/>
+
+    <div x-data="{ open: false }">
+      <button @click="open = true">Open Dropdown</button>
+
+      <ul x-show="open" @click.away="open = false">
+        Dropdown Body
+      </ul>
+    </div>
+
+    <div x-data="{ tab: 'foo' }">
+      <button :class="{ 'active': tab === 'foo' }" @click="tab = 'foo'">Foo</button>
+      <button :class="{ 'active': tab === 'bar' }" @click="tab = 'bar'">Bar</button>
+
+      <div x-show="tab === 'foo'">Tab Foo</div>
+      <div x-show="tab === 'bar'">Tab Bar</div>
+    </div>
+  </div>
+</div>
